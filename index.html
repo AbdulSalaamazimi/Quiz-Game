@@ -7,6 +7,41 @@
     <title>Quiz Game</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="screen active" id="start-screen">
+            <h1>Quiz Time!</h1>
+            <p>Test your knowledge with these fun questions</p>
+            <button id="start-btn">Start Quiz</button>
+        </div>
+
+        <div class="screen" id="quiz-screen">
+            <div class="quiz-header">
+                <h1 id="question-text">Questions goes here</h1>
+                <div>
+                    <p>Question <span id="current-question">1</span> of <span>5</span></p>
+                    <p>Score: <span id="score">0</span></p>
+                </div>
+            </div>
+
+            <div class="answer-container" id="answer-container">
+                <!-- Answer buttons will be added from our js code here -->
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+
+        <div class="screen" id="result-screen">
+            <h1>Quiz Results</h1>
+            <div id="result-info">
+                <p>You scored <span id="final-score">0</span> of <span id="max-score">5</span></p>
+
+                <div id="result-message">Good job!</div>
+            </div>
+            <button id="restart-btn">Restart Quiz</button>
+        </div>
+
+    </div>
 </body>
 </html>
