@@ -26,7 +26,7 @@ body {
     position: relative;
 }
 
-/* Screen */
+/* Start Screen */
 
 .screen {
     display: none;
@@ -42,6 +42,12 @@ body {
     color: #e86a33;
     margin-bottom: 20px;
     font-size: 2.5rem;
+}
+
+#start-screen p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
 }
 
 .quiz-header {
@@ -60,4 +66,120 @@ body {
     justify-content: space-between;
     color: #666;
     margin-bottom: 10px;
+}
+
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.answer-btn {
+    background-color: #f8f0e5;
+    color: #333;
+    border-radius: 10px solid #eadbc8;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+.answer-btn:hover {
+    background-color: #eadbc8;
+    border-color: #dac0ae;
+}
+
+.answer-btn.correct {
+    background-color: #e6fff0;
+    border-color: #a3f0c4;
+    color: #28a745;
+}
+
+.answer-btn.incorrect {
+    background-color: #fff0f0;
+    border-color: #ffbdbd;
+    color: #dc3545;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #f8f0e5;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: #e86a33;
+    transition: width 0.3s ease;
+}
+
+/* Results Screen */
+
+#results-screen h1 {
+    color: #e86a33;
+    margin-bottom: 30px;
+}
+
+.result-info {
+    background-color: #f8f0e5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.result-info p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#result-message {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e86a33;
+}
+
+button {
+    background-color: #e86a33;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d45b28;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    /* when we hit 500px and bellow, implement the style below */
+
+    .screen {
+        padding: 1rem;
+    }
+
+    #start-screen h1 {
+        font-size: 2rem;
+    }
+
+    #question-text {
+        font-size: 1.3rem;
+    }
+
+    .answer-btn {
+        padding: 12px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    } 
 }
