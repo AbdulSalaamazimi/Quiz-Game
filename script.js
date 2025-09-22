@@ -116,7 +116,7 @@ function ShowQuestion() {
   answersContainer.appendChild(button)
 }
 
-function selectAnswer() {
+function selectAnswer(event) {
   // Optomization Check
   if (answersDisabled) return;
 
@@ -139,11 +139,17 @@ function selectAnswer() {
     maxScoreSpan.textContent = score;
   }
 
-  if(currentQuestionIndex < quizQuestions.length) {
+  setTimeout(() => {
+    currentQuestionIndex++;
+
+     if(currentQuestionIndex < quizQuestions.length) {
     ShowQuestion()
-  } else {
-    ShowResults()
-  }
+    } else {
+      ShowResults()
+    }
+  },1000);
+
+ 
 }
 
 function restartQuiz() {
