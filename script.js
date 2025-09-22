@@ -116,6 +116,36 @@ function ShowQuestion() {
   answersContainer.appendChild(button)
 }
 
+function selectAnswer() {
+  // Optomization Check
+  if (answersDisabled) return;
+
+  answersDisabled = true;
+
+  const selectedButton = event.target;
+  const isCorrect = selectedButton.dataset.correct === "true";
+
+  // todo: Explain in second
+  Array.from(answersContainer.children).forEach((button) => {
+    if (button.dataset.correct === "true") {
+      button.classList.add("correct");
+    } else {
+      button.classList.add("incorrect");
+    }
+  });
+
+  if(isCorrect) {
+    score++;
+    maxScoreSpan.textContent = score;
+  }
+
+  if(currentQuestionIndex < quizQuestions.length) {
+    ShowQuestion()
+  } else {
+    ShowResults()
+  }
+}
+
 function restartQuiz() {
     console.log("Quiz Restarted");
 }
