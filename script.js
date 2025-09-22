@@ -63,7 +63,7 @@ const quizQuestions = [
 ];
 
 // Quiz State VARS
-let currentQuestionindex = 0;
+let currentQuestionIndex = 0;
 let score = 0;
 let answersDisabled = false;
 
@@ -75,8 +75,45 @@ maxScoreSpan.textContent = quizQuestions.length;
 startButton.addEventListener("click", startQuiz);
 restartButton.addEventListener("click", restartQuiz);
 
-function startQuiz() {
-    console.log("Quiz Started");
+  function startQuiz() {
+  // reset VARS
+  currentQuestionIndex = 0;
+  maxScoreSpan.textContent = 0;
+
+  startScreen.classList.remove("active");
+  quizScreen.classList.add("active");
+
+  ShowQuestion();
+}
+
+function ShowQuestion() {
+  // reset state 
+  answersDisabled = false;
+
+  const currentQuestion = quizQuestions[currentQuestionIndex];
+
+  currentQuestionSpan.textContent = currentQuestionIndex + 1;
+
+  const progressPercent = (currentQuestionIndex / quizQuestions.length) * 100;
+  progressBar.style.width = progressBar + "%";
+
+  questionText.textContent = currentQuestion.question;
+
+  // todo: Explain this in a second
+  answersContainer.innerHTML = "";
+
+  currentQuestion.answers.forEach(answer => {
+    const button = document.createElement("button");
+    button.textContent = answer.text;
+    button.classList.add("answer-btn");
+  })
+
+  // what is dataset ? it is a property of the button element that allows you to store custome data
+  button.dataset.correct = answer.correct;
+
+  button.addEventListener("click",selectAnswer);
+
+  answersContainer.appendChild(button)
 }
 
 function restartQuiz() {
