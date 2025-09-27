@@ -22,4 +22,5 @@ I built this project to practice and improve my **HTML**, **CSS**, and **JavaScr
 ## Purpose 🎯
 This project is part of my learning journey.  
 I created it to improve my front-end development skills in **HTML, CSS, and JavaScript**.
+
 You can use this repo for creating an Advertisement for your Website and your Idea
